@@ -96,7 +96,7 @@ resource "aws_s3_bucket" "website_root" {
 
   website {
     index_document = "index.html"
-    error_document = "error.html"
+    error_document = "404.html"
   }
 
   tags = merge(var.tags, {
@@ -196,7 +196,7 @@ resource "aws_cloudfront_distribution" "website_cdn_root" {
   custom_error_response {
     error_caching_min_ttl = 300
     error_code            = 404
-    response_page_path    = "/error.html"
+    response_page_path    = "/404.html"
     response_code         = 404
   }
 
