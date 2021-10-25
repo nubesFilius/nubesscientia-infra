@@ -96,7 +96,7 @@ resource "aws_s3_bucket" "website_root" {
 
   website {
     index_document = "index.html"
-    error_document = "404.html"
+    error_document = "error.html"
   }
 
   tags = merge(var.tags, {
